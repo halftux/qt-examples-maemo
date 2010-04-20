@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
+** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
 ** All rights reserved.
 ** Contact: Nokia Corporation (qt-info@nokia.com)
 **
@@ -39,57 +39,72 @@
 **
 ****************************************************************************/
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef QWEBVIEWSELECTIONSUPPRESSOR_H
+#define QWEBVIEWSELECTIONSUPPRESSOR_H
 
-#include <QWidget>
+#include <QtWebKit/qwebview.h>
+#include <QtGui/qevent.h>
 
-class QAbstractKineticScroller;
-class QTableView;
-class QLabel;
-class QGridLayout;
-
-
-class ScrollerWindow : public QWidget
+class QWebViewSelectionSuppressor : public QObject
 {
     Q_OBJECT
-
 public:
-    ScrollerWindow();
+    QWebViewSelectionSuppressor(QWebView *v)
+        : QObject(v), view(v), enabled(false), mousePressed(false)
+    {
+        Q_ASSERT(view);
+        enable();
+    }
 
-protected slots:
-    void setLowFrictionEnabled(bool);
+    inline void enable()
+    {
+        if (enabled)
+            return;
+        view->installEventFilter(this);
+        enabled = true;
+    }
+ 
+    inline void disable()
+    {
+        if (!enabled)
+            return;
+        view->removeEventFilter(this);
+        enabled = false;
+    }
 
-    void setAutoMode();
-    void setPushMode();
-    void setAccelerationMode();
-
-    void setDragInertia(int);
-    void setDirectionErrorMargin(int);
-    void setPanningThreshold(int);
-    void setDecelerationFactor(int);
-    void setFastVelocityFactor(int);
-    void setMinimumVelocity(int);
-    void setMaximumVelocity(int);
-    void setOvershootWhenScrollable();
-    void setOvershootAlwaysOn();
-    void setOvershootAlwaysOff();
-    void setAxisLockThreshold(int);
-    void setFPS(int);
-
-    void scrollToRandom();
-
+    inline bool isEnabled() const
+    {
+        return enabled;
+    }
+    
 protected:
+    inline bool eventFilter(QObject *, QEvent *e);
 
-    void updateNumberLabels();
-    void setupSlider( const char* text, int min, int max, int value, const char* slot, int *row, QGridLayout *layout);
-
-    QTableView *table;
-    QAbstractKineticScroller *scroller1;
-    QAbstractKineticScroller *scroller2;
-
-    QLabel *numberLabels[9];
+private:
+    QWebView *view;
+    bool enabled;
+    bool mousePressed;
 };
 
+bool QWebViewSelectionSuppressor::eventFilter(QObject *, QEvent *e)
+{
+    switch (e->type()) {
+    case QEvent::MouseButtonPress:
+        if (static_cast<QMouseEvent *>(e)->button() == Qt::LeftButton)
+            mousePressed = true;
+        break;
+    case QEvent::MouseButtonRelease:
+        if (static_cast<QMouseEvent *>(e)->button() == Qt::LeftButton)
+            mousePressed = false;
+        break;
+    case QEvent::MouseMove:
+        if (mousePressed)
+            return true;
+        break;
+    default:
+        break;
+    }
+    return false;
+}
 
 #endif
