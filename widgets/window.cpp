@@ -38,7 +38,7 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
+#include <QtWidgets>
 #include <QtDBus>
 #include <QtDebug>
 #include <QMaemo5InformationBox>

@@ -38,7 +38,7 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QtGui>
+#include <QtWidgets>
 
 #include "common.h"
 

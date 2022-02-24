@@ -2,7 +2,7 @@ TEMPLATE = app
 HEADERS = window.h
 SOURCES = main.cpp
 
-QT += maemo5
+QT += widgets maemo5
 
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/maemo5/kineticscroller

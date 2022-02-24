@@ -1,5 +1,6 @@
 #include <QtGui>
-#include <QtGui/QX11Info>
+#include <QtWidgets>
+#include <QX11Info>
 #include <X11/Xlib.h>
 
 class Panel : public QDialog {

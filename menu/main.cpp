@@ -38,7 +38,7 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
+#include <QtWidgets>
 #include <QMaemo5ValueButton>
 #include <QMaemo5ListPickSelector>
 

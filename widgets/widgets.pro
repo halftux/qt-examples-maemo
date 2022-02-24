@@ -4,7 +4,7 @@ HEADERS = window.h
 SOURCES = main.cpp window.cpp
 RESOURCES = widgets.qrc
 
-QT += dbus maemo5
+QT += widgets dbus maemo5
 
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/maemo5/widgets

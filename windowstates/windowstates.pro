@@ -2,7 +2,8 @@ TEMPLATE = app
 SOURCES = main.cpp
 HEADERS = examplewidget.h fullscreenexitbutton.h
 
-QT += dbus
+QT += widgets dbus
+LIBS += -lX11
 
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/maemo5/windowstates

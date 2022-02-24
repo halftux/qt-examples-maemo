@@ -46,8 +46,8 @@
 #include <QtCore/qvariant.h>
 
 #include <QtGui/qstandarditemmodel.h>
-#include <QtGui/qmainwindow.h>
-#include <QtGui/qboxlayout.h>
+#include <QtWidgets/qmainwindow.h>
+#include <QtWidgets/qboxlayout.h>
 
 class QAbstractItemView;
 

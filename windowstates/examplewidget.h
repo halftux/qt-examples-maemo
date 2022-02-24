@@ -43,7 +43,7 @@
 
 #include "fullscreenexitbutton.h"
 
-#include <QtGui>
+#include <QtWidgets>
 #include <QX11Info>
 #include <QtDBus>
 

@@ -41,7 +41,7 @@
 #ifndef QWEBVIEWSELECTIONSUPPRESSOR_H
 #define QWEBVIEWSELECTIONSUPPRESSOR_H
 
-#include <QtWebKit/qwebview.h>
+#include <QtWebKitWidgets/qwebview.h>
 #include <QtGui/qevent.h>
 
 class QWebViewSelectionSuppressor : public QObject

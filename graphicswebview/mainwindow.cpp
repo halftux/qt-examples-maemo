@@ -38,8 +38,8 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
-#include <QtWebKit>
+#include <QtWidgets>
+#include <QtWebKitWidgets>
 #include "mainwindow.h"
 
 #include <QtDebug>

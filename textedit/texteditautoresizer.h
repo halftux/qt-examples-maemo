@@ -38,8 +38,8 @@
 **
 ****************************************************************************/
 
-#include <QtGui/qplaintextedit.h>
-#include <QtGui/qtextedit.h>
+#include <QtWidgets/qplaintextedit.h>
+#include <QtWidgets/qtextedit.h>
 #include <QtGui/qabstractkineticscroller.h>
 
 #ifndef TEXTEDITAUTORESIZER_H

@@ -40,7 +40,7 @@
 
 #include "maemo5.h"
 
-#include <QtGui>
+#include <QtWidgets>
 
 #ifdef Q_WS_MAEMO_5
 

@@ -11,7 +11,7 @@ SOURCES += main.cpp \
            others.cpp \
            qml.cpp
 
-QT += declarative
+QT += widgets
 
 maemo5:SOURCES += maemo5.cpp
            

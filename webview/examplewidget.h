@@ -43,12 +43,12 @@
 
 #include "qwebviewselectionsuppressor.h"
 
-#include <QtGui/qwidget.h>
-#include <QtGui/qradiobutton.h>
-#include <QtGui/qbuttongroup.h>
+#include <QtWidgets/qwidget.h>
+#include <QtWidgets/qradiobutton.h>
+#include <QtWidgets/qbuttongroup.h>
 #include <QtGui/qabstractkineticscroller.h>
-#include <QtGui/qlayout.h>
-#include <QtWebKit/qwebview.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWebKitWidgets/qwebview.h>
 
 #include <QApplication>
 

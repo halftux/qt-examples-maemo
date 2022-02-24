@@ -40,8 +40,8 @@
 
 #include "examplewidget.h"
 
-#include <QtGui>
-#include <QtWebKit>
+#include <QtWidgets>
+#include <QtWebKitWidgets>
 
 int main(int argc, char *argv[])
 {

@@ -4,7 +4,7 @@ TEMPLATE = app
 SOURCES += main.cpp
 HEADERS += examplewidget.h qwebviewselectionsuppressor.h
 
-QT += webkit multimedia opengl network
+QT += widgets webkitwidgets multimedia opengl network
 
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/maemo5/webview

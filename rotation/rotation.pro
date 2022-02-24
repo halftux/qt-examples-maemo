@@ -1,7 +1,7 @@
 TEMPLATE = app
 SOURCES = main.cpp
 
-QT += maemo5 dbus
+QT += widgets maemo5 dbus
 
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/maemo5/rotation
